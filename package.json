@@ -1,0 +1,47 @@
+{
+  "name": "printer-agent",
+  "productName": "printer-agent",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "npm run dev:next & npm run start",
+    "start": "electron-forge start",
+    "dev:next": "next dev ./next",
+    "build:next": "next build ./next",
+    "dist": "npm run build:next && electron-forge make",
+    "export:next": "npm run build:next",
+    "dev:websocket": "node websocket/server.js",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "postinstall": "electron-rebuild -f -w sharp"
+  },
+  "keywords": [],
+  "author": "ruth",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "next": "^16.1.1",
+    "node-escpos": "^0.0.3",
+    "playwright": "^1.57.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "@types/react": "19.2.7",
+    "electron": "39.2.7",
+    "electron-rebuild": "^3.2.9"
+  }
+}
