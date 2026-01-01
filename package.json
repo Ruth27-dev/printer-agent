@@ -10,13 +10,13 @@
     "dev:next": "next dev ./next",
     "build:next": "next build ./next",
     "dist": "npm run build:next && electron-forge make",
+    "dist:clean": "rm -rf node_modules out && npm ci && npm run dist",
     "export:next": "npm run build:next",
     "dev:websocket": "node websocket/server.js",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\"",
-    "postinstall": "electron-rebuild -f -w sharp"
+    "lint": "echo \"No linting configured\""
   },
   "keywords": [],
   "author": "ruth",
@@ -26,7 +26,6 @@
     "electron-squirrel-startup": "^1.0.1",
     "next": "^16.1.1",
     "node-escpos": "^0.0.3",
-    "playwright": "^1.57.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "ws": "^8.18.3"
@@ -41,7 +40,6 @@
     "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron/fuses": "^1.8.0",
     "@types/react": "19.2.7",
-    "electron": "39.2.7",
-    "electron-rebuild": "^3.2.9"
+    "electron": "39.2.7"
   }
 }
